@@ -1,0 +1,89 @@
+#god {
+  font-size: 20;
+  font-family: System-Regular;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 7%;
+}
+
+#batteryLevel {
+  font-size: 25;
+  font-family: System-Regular;
+  x: 83%;
+  y: 8%;
+  fill: black;
+}
+
+#time {
+  font-size: 100;
+  font-family: System-Bold;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 45%;
+  fill: black;
+}
+
+#date {
+  font-size: 35;
+  font-family: System-Regular;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 65%;
+}
+
+#bpmIcon {
+  height: 32;
+  width: 32;
+  x: 2%;
+  y: 73%;
+}
+
+#bpm {
+  font-size: 30;
+  font-family: System-Regular;
+  x: 16%;
+  y: 80%+4;
+}
+
+#stepIcon {
+  height: 32;
+  width: 32;
+  x: 2%;
+  y: 86%;
+}
+
+#steps {
+  font-size: 30;
+  font-family: System-Regular;
+  text-length: 6;
+  text-buffer: 6;
+  x: 16%;
+  y: 94%;
+}
+
+#weatherLocation {
+  font-size: 25;
+  font-family: System-Regular;
+  text-length: 12;
+  x: 50%-5;
+  y: 79%;
+}
+
+#weather {
+  font-size: 25;
+  font-family: System-Regular;
+  text-length: 15;
+  x: 50%-5;
+  y: 89%;
+}
+
+#weatherTime {
+  font-size: 15;
+  font-family: System-Regular;
+  text-length: 11;
+  x: 80%;
+  y: 98%;
+}
