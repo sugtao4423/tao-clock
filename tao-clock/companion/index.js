@@ -8,10 +8,14 @@ function queryWeatherData(){
     return;
   }
   geolocation.getCurrentPosition((position) => {
-    fetchWeatherData(position.coords.latitude, position.coords.longitude);
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    lat = Math.round(lat * 1000) / 1000;
+    lon = Math.round(lon * 1000) / 1000;
+    fetchWeatherData(lat, lon);
   }, (error) => {
     console.log('Error: GPS error. use default, Higashiyamato-shi');
-    fetchWeatherData(35.74511, 139.42430);
+    fetchWeatherData(35.745, 139.424);
   });
 
   function fetchWeatherData(lat, lon){
