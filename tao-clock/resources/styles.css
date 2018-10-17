@@ -7,6 +7,14 @@
   y: 7%;
 }
 
+#btIcon {
+  display: none;
+  height: 24;
+  width: 24;
+  x: 2%;
+  y: 1%;
+}
+
 #batteryLevel {
   font-size: 25;
   font-family: System-Regular;

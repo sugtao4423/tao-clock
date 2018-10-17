@@ -17,6 +17,12 @@ display.onchange = () => {
   }
 }
 
+/* ---------- BT Icon ---------- */
+const btIcon = document.getElementById('btIcon');
+function changeBTIcon(){
+  btIcon.style.display = (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) ? 'inline' : 'none';
+}
+
 /* ---------- GOD ---------- */
 let godPos = 0;
 const bg = document.getElementById('background');
@@ -117,6 +123,14 @@ function receiveDateFormat(format){
     dateFormat = format;
     updateClock();
   }
+}
+
+messaging.peerSocket.onopen = () => {
+  changeBTIcon();
+}
+
+messaging.peerSocket.onclose = () => {
+  changeBTIcon();
 }
 
 messaging.peerSocket.onmessage = (evt) => {
