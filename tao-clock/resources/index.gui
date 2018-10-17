@@ -1,16 +1,16 @@
 <svg id="background">
-  <image id="godImage" href="anz.jpg" load="sync" />
+  <image id="godImage" href="anz.jpg" />
   <text id="god">Clover Day's</text>
-  <image id="btIcon" href="icon/bluetooth.png" load="sync" />
+  <image id="btIcon" href="icon/bluetooth.png" />
   <text id="batteryLevel" />
   <line x1="0" y1="10%" x2="100%" y2="10%" fill="black" stroke-width="2" />
   <text id="time" />
   <text id="date" />
   
   <line x1="0" y1="70%" x2="100%" y2="70%" fill="black" stroke-width="2" />
-  <image id="bpmIcon" href="icon/bpm.png" load="sync" />
+  <image id="bpmIcon" href="icon/bpm.png" />
   <text id="bpm">---</text>
-  <image id="stepIcon" href="icon/step.png" load="sync" />
+  <image id="stepIcon" href="icon/step.png" />
   <text id="steps" />
   
   <line x1="45%" y1="70%" x2="45%" y2="100%" fill="black" stroke-width="2" />
