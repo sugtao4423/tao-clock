@@ -1,4 +1,7 @@
 {
+  "devDependencies": {
+    "@fitbit/sdk": "~4.2.0"
+  },
   "fitbit": {
     "appUUID": "UUID_IS_HIDDEN",
     "appType": "clockface",
@@ -16,12 +19,10 @@
       "meson"
     ],
     "i18n": {
-      "en": {
+      "en-US": {
         "name": "tao clock"
       }
-    }
-  },
-  "devDependencies": {
-    "@fitbit/sdk": "~1.0.0"
+    },
+    "defaultLanguage": "en-US"
   }
 }
