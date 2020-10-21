@@ -3,17 +3,17 @@
   <text id="god">Clover Day's</text>
   <image id="btIcon" href="icon/bluetooth.png" />
   <text id="batteryLevel" />
-  <line x1="0" y1="10%" x2="100%" y2="10%" fill="black" stroke-width="2" />
+  <line x1="0" y1="14%" x2="100%" y2="14%" fill="black" stroke-width="1" />
   <text id="time" />
   <text id="date" />
   
-  <line x1="0" y1="70%" x2="100%" y2="70%" fill="black" stroke-width="2" />
+  <line x1="0" y1="66%" x2="100%" y2="66%" fill="black" stroke-width="1" />
   <image id="bpmIcon" href="icon/bpm.png" />
   <text id="bpm">---</text>
   <image id="stepIcon" href="icon/step.png" />
   <text id="steps" />
   
-  <line x1="45%" y1="70%" x2="45%" y2="100%" fill="black" stroke-width="2" />
+  <line x1="45%" y1="66%" x2="45%" y2="100%" fill="black" stroke-width="1" />
   <text id="weatherLocation" />
   <text id="weather" />
   <text id="weatherTime" />

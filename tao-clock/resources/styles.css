@@ -4,33 +4,31 @@
   text-length: 32;
   text-anchor: middle;
   x: 50%;
-  y: 7%;
+  y: 9%+1;
 }
 
 #btIcon {
   display: none;
-  height: 24;
-  width: 24;
-  x: 2%;
-  y: 1%;
+  height: 22;
+  width: 22;
+  x: 12%;
+  y: 4%+1;
 }
 
 #batteryLevel {
-  font-size: 25;
+  font-size: 24;
   font-family: System-Regular;
-  x: 83%;
-  y: 8%;
-  fill: black;
+  x: 75%;
+  y: 10%;
 }
 
 #time {
-  font-size: 100;
+  font-size: 110;
   font-family: System-Bold;
   text-length: 32;
   text-anchor: middle;
   x: 50%;
   y: 45%;
-  fill: black;
 }
 
 #date {
@@ -39,28 +37,28 @@
   text-length: 32;
   text-anchor: middle;
   x: 50%;
-  y: 65%;
+  y: 62%;
 }
 
 #bpmIcon {
   height: 32;
   width: 32;
-  x: 2%;
-  y: 73%;
+  x: 5%;
+  y: 69%;
 }
 
 #bpm {
   font-size: 30;
   font-family: System-Regular;
-  x: 16%;
-  y: 80%+4;
+  x: 18%;
+  y: 76%+3;
 }
 
 #stepIcon {
   height: 32;
   width: 32;
-  x: 2%;
-  y: 86%;
+  x: 5%;
+  y: 82%;
 }
 
 #steps {
@@ -68,16 +66,16 @@
   font-family: System-Regular;
   text-length: 6;
   text-buffer: 6;
-  x: 16%;
-  y: 94%;
+  x: 18%;
+  y: 89%+2;
 }
 
 #weatherLocation {
-  font-size: 25;
+  font-size: 24;
   font-family: System-Regular;
   text-length: 12;
   x: 50%-5;
-  y: 79%;
+  y: 75%;
 }
 
 #weather {
@@ -85,13 +83,13 @@
   font-family: System-Regular;
   text-length: 15;
   x: 50%-5;
-  y: 89%;
+  y: 85%;
 }
 
 #weatherTime {
   font-size: 15;
   font-family: System-Regular;
   text-length: 11;
-  x: 80%;
-  y: 98%;
+  x: 75%;
+  y: 92%;
 }

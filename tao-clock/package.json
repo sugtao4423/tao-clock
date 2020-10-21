@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@fitbit/sdk": "~4.2.0"
+    "@fitbit/sdk": "~5.0.0"
   },
   "fitbit": {
     "appUUID": "UUID_IS_HIDDEN",
@@ -16,7 +16,8 @@
       "access_location"
     ],
     "buildTargets": [
-      "meson"
+      "atlas",
+      "vulcan"
     ],
     "i18n": {
       "en-US": {
