@@ -1,7 +1,7 @@
 #god {
   font-size: 20;
   font-family: System-Regular;
-  text-length: 32;
+  text-length: 15;
   text-anchor: middle;
   x: 50%;
   y: 9%+1;
@@ -18,6 +18,7 @@
 #batteryLevel {
   font-size: 24;
   font-family: System-Regular;
+  text-length: 3;
   x: 75%;
   y: 10%;
 }
@@ -25,7 +26,7 @@
 #time {
   font-size: 110;
   font-family: System-Bold;
-  text-length: 32;
+  text-length: 5;
   text-anchor: middle;
   x: 50%;
   y: 45%;
@@ -34,7 +35,7 @@
 #date {
   font-size: 35;
   font-family: System-Regular;
-  text-length: 32;
+  text-length: 14;
   text-anchor: middle;
   x: 50%;
   y: 62%;
@@ -50,6 +51,7 @@
 #bpm {
   font-size: 30;
   font-family: System-Regular;
+  text-length: 3;
   x: 18%;
   y: 76%+3;
 }
@@ -65,7 +67,6 @@
   font-size: 30;
   font-family: System-Regular;
   text-length: 6;
-  text-buffer: 6;
   x: 18%;
   y: 89%+2;
 }
@@ -89,7 +90,7 @@
 #weatherTime {
   font-size: 15;
   font-family: System-Regular;
-  text-length: 11;
+  text-length: 8;
   x: 75%;
   y: 92%;
 }
