@@ -68,35 +68,18 @@ function updateClock(){
 /* ---------- Heart Rate ---------- */
 const hrm = new HeartRateSensor();
 const bpm = document.getElementById('bpm');
-let hrBpm = '---';
-let hrLastUpdate = 0;
-let hrTimer = undefined;
-
 hrm.onreading = () => {
-  hrBpm = hrm.heartRate;
-  hrLastUpdate = Date.now();
+  setText(bpm, hrm.heartRate);
 }
 
 function heartRateOn(){
+  setText(bpm, '---');
   hrm.start();
-  hrTimer = setInterval(() => {
-    if((Date.now() - hrLastUpdate) > (10 * 1000)){
-      hrBpm = '---';
-    }
-    setText(bpm, hrBpm);
-  }, 1000);
 }
 
 function heartRateOff(){
-  if(hrm){
-    hrm.stop();
-  }
-  if(hrTimer !== undefined){
-    clearInterval(hrTimer);
-  }
-  hrTimer = undefined;
-  hrBpm = '---';
-  setText(bpm, hrBpm);
+  hrm.stop();
+  setText(bpm, '---');
 }
 
 /* ---------- Weather ---------- */
