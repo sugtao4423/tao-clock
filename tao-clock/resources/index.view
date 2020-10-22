@@ -1,5 +1,5 @@
 <svg id="background">
-  <image id="godImage" href="anz.jpg" />
+  <image id="godImage" href="anz.png" />
   <text id="god">Clover Day's</text>
   <image id="btIcon" href="icon/bluetooth.png" />
   <text id="batteryLevel" />

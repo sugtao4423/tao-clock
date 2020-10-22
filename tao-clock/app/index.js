@@ -30,11 +30,11 @@ const godImage = document.getElementById('godImage');
 const godText = document.getElementById('god');
 const godData = [
   {
-    image: 'anz.jpg',
+    image: 'anz.png',
     text: "Clover Day's"
   },
   {
-    image: 'rikka.jpg',
+    image: 'rikka.png',
     text: 'Rikka Takanashi'
   }
 ];
