@@ -1,9 +1,9 @@
-import * as messaging from "messaging";
+import { peerSocket } from "messaging";
 import { geolocation } from "geolocation";
 import { settingsStorage } from "settings";
 
 function queryWeatherData(){
-  if(messaging.peerSocket.readyState !== messaging.peerSocket.OPEN){
+  if(peerSocket.readyState !== peerSocket.OPEN){
     console.log('Error: Connection is not open');
     return;
   }
@@ -79,26 +79,26 @@ function sendAllSettings(){
 }
 
 function sendData(data){
-  if(messaging.peerSocket.readyState === messaging.peerSocket.OPEN){
-    messaging.peerSocket.send(data);
+  if(peerSocket.readyState === peerSocket.OPEN){
+    peerSocket.send(data);
   }
 }
 
 let weatherTimer = undefined;
 
-messaging.peerSocket.onopen = () => {
+peerSocket.onopen = () => {
   sendAllSettings();
   queryWeatherData();
   weatherTimer = setInterval(queryWeatherData, 15 * 60 * 1000);
 }
 
-messaging.peerSocket.onclose = () => {
+peerSocket.onclose = () => {
   if(weatherTimer !== undefined){
     clearInterval(weatherTimer);
     weatherTimer = undefined;
   }
 }
 
-messaging.peerSocket.onerror = (err) => {
+peerSocket.onerror = (err) => {
   console.log('Connection error: ' + err.code + ' - ' + err.message);
 }

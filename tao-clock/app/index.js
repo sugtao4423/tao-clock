@@ -5,7 +5,7 @@ import { today } from "user-activity";
 import { HeartRateSensor } from "heart-rate";
 import { preferences } from "user-settings";
 import document from "document";
-import * as messaging from "messaging";
+import { peerSocket } from "messaging";
 import * as util from "../common/utils";
 
 display.onchange = () => {
@@ -20,7 +20,7 @@ display.onchange = () => {
 /* ---------- BT Icon ---------- */
 const btIcon = document.getElementById('btIcon');
 function changeBTIcon(){
-  btIcon.style.display = (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) ? 'inline' : 'none';
+  btIcon.style.display = (peerSocket.readyState === peerSocket.OPEN) ? 'inline' : 'none';
 }
 
 /* ---------- GOD ---------- */
@@ -125,15 +125,15 @@ function receiveDateFormat(format){
   }
 }
 
-messaging.peerSocket.onopen = () => {
+peerSocket.onopen = () => {
   changeBTIcon();
 }
 
-messaging.peerSocket.onclose = () => {
+peerSocket.onclose = () => {
   changeBTIcon();
 }
 
-messaging.peerSocket.onmessage = (evt) => {
+peerSocket.onmessage = (evt) => {
   if(evt.data){
     switch(evt.data.key){
       case 'weather':
@@ -146,7 +146,7 @@ messaging.peerSocket.onmessage = (evt) => {
   }
 }
 
-messaging.peerSocket.onerror = (err) => {
+peerSocket.onerror = (err) => {
   console.log('Connection error: ' + err.code + ' - ' + err.message);
 }
 
