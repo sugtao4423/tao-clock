@@ -21,20 +21,16 @@ function queryWeatherData() {
       fetchWeatherData(35.745, 139.424)
     }
   )
+}
 
-  function fetchWeatherData(lat, lon) {
-    fetch(
-      `https://URL_IS_HIDDEN?lat=${lat}&lon=${lon}&kosame=1&sec=${Date.now()}`
-    )
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (json) {
-        sendWeatherData(json)
-      })
-      .catch(function (err) {
-        console.log('Error fetching weather: ' + err)
-      })
+async function fetchWeatherData(lat, lon) {
+  const url = `https://URL_IS_HIDDEN?lat=${lat}&lon=${lon}&kosame=1&sec=${Date.now()}`
+  try {
+    const response = await fetch(url)
+    const json = await response.json()
+    sendWeatherData(json)
+  } catch (err) {
+    console.log('Error fetching weather: ' + err)
   }
 }
 
