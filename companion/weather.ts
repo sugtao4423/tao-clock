@@ -43,11 +43,13 @@ const fetch2SendWeatherData = async (lat: number, lon: number) => {
 }
 
 const send2Device = (w: Weather) => {
-  const dt = new Date()
-  const after2h = dt.setHours(dt.getHours() + 2) / 1000
-  const forecast = w.srf.find(
-    (s) => s.time <= after2h && s.time + 2 * 60 * 60 * 60 * 1000 - 1 >= after2h
-  )
+  const date = new Date()
+  date.setMilliseconds(0)
+  date.setSeconds(0)
+  date.setMinutes(0)
+  date.setHours(date.getHours() + 2)
+
+  const forecast = w.srf.find((s) => s.time === date.getTime() / 1000)
   if (!forecast) return
 
   const data: WeatherMessage = {
