@@ -23,6 +23,15 @@
   y: 10%;
 }
 
+#divider1 {
+  x1: 0;
+  x2: 100%;
+  y1: 14%;
+  y2: 14%;
+  fill: 'black';
+  stroke-width: 1;
+}
+
 #time {
   font-size: 110;
   font-family: System-Bold;
@@ -39,6 +48,15 @@
   text-anchor: middle;
   x: 50%;
   y: 62%;
+}
+
+#divider2 {
+  x1: 0;
+  x2: 100%;
+  y1: 66%;
+  y2: 66%;
+  fill: 'black';
+  stroke-width: 1;
 }
 
 #bpmIcon {
@@ -69,6 +87,15 @@
   text-length: 6;
   x: 18%;
   y: 89%+2;
+}
+
+#divider3 {
+  x1: 45%;
+  x2: 45%;
+  y1: 66%;
+  y2: 100%;
+  fill: 'black';
+  stroke-width: 1;
 }
 
 #weatherLocation {
