@@ -5,11 +5,11 @@ const godImage = document.getElementById('godImage') as ImageElement
 const godText = document.getElementById('god') as Element
 const godData = [
   {
-    image: 'anz.png',
+    image: 'anz.jpg',
     text: "Clover Day's",
   },
   {
-    image: 'rikka.png',
+    image: 'rikka.jpg',
     text: 'Rikka Takanashi',
   },
 ]
