@@ -22,22 +22,22 @@ export const updateClock = (dateFormat: string | null) => {
 const zeroPad = (i: number): string => (i < 10 ? '0' + i : i.toString())
 
 const getTime = (preferences: Preferences): string => {
-  const today = new Date()
-  let hours = today.getHours()
+  const dt = new Date()
+  let hours = dt.getHours()
   if (preferences.clockDisplay === '12h') {
     hours = hours % 12 || 12
   }
   const hour = zeroPad(hours)
-  const min = zeroPad(today.getMinutes())
+  const min = zeroPad(dt.getMinutes())
   return `${hour}:${min}`
 }
 
 const getDate = (dateFormat: string): string => {
-  const today = new Date()
-  const year = today.getFullYear().toString()
-  const month = (today.getMonth() + 1).toString()
-  const date = zeroPad(today.getDate())
-  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][today.getDay()]
+  const dt = new Date()
+  const year = dt.getFullYear().toString()
+  const month = (dt.getMonth() + 1).toString()
+  const date = zeroPad(dt.getDate())
+  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][dt.getDay()]
 
   return dateFormat
     .replace('yyyy', year)
