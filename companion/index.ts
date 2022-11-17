@@ -1,106 +1,21 @@
-import { geolocation } from 'geolocation'
 import { peerSocket } from 'messaging'
-import { settingsStorage } from 'settings'
+import * as settings from './settings'
+import * as weather from './weather'
 
-function queryWeatherData() {
-  if (peerSocket.readyState !== peerSocket.OPEN) {
-    console.log('Error: Connection is not open')
-    return
-  }
-  geolocation.getCurrentPosition(
-    (position) => {
-      let lat = position.coords.latitude
-      let lon = position.coords.longitude
-      lat = Math.round(lat * 1000) / 1000
-      lon = Math.round(lon * 1000) / 1000
-      fetchWeatherData(lat, lon)
-    },
-    (err) => {
-      console.log('Error: ' + err)
-      console.log('Use default, Higashiyamato-shi.')
-      fetchWeatherData(35.745, 139.424)
-    }
-  )
-}
+settings.init()
 
-async function fetchWeatherData(lat, lon) {
-  const url = `https://URL_IS_HIDDEN?lat=${lat}&lon=${lon}&kosame=1&sec=${Date.now()}`
-  try {
-    const response = await fetch(url)
-    const json = await response.json()
-    sendWeatherData(json)
-  } catch (err) {
-    console.log('Error fetching weather: ' + err)
-  }
-}
-
-function sendWeatherData(json) {
-  const dt = new Date()
-  const after2h = dt.setHours(dt.getHours() + 2) / 1000
-  let forecast
-  for (let i in json.srf) {
-    const current = json.srf[i]
-    if (
-      current.time <= after2h &&
-      current.time + 2 * 60 * 60 * 60 * 1000 - 1 >= after2h
-    ) {
-      forecast = current
-    }
-  }
-  const locationName = json['banner_list']['0']['LNAME']
-  const temp = forecast.TEMP
-  const weather = forecast.WXTAG
-  const weatherTime = forecast.time
-
-  const data = {
-    key: 'weather',
-    locationName: locationName,
-    temp: temp,
-    weather: weather,
-    weatherTime: weatherTime,
-  }
-  sendData(data)
-}
-
-settingsStorage.onchange = (evt) => {
-  const data = {
-    key: evt.key,
-    value: evt.newValue,
-  }
-  sendData(data)
-}
-
-function sendAllSettings() {
-  for (let i = 0; i < settingsStorage.length; i++) {
-    const key = settingsStorage.key(i)
-    if (key) {
-      const data = {
-        key: key,
-        value: settingsStorage.getItem(key),
-      }
-      sendData(data)
-    }
-  }
-}
-
-function sendData(data) {
-  if (peerSocket.readyState === peerSocket.OPEN) {
-    peerSocket.send(data)
-  }
-}
-
-let weatherTimer = undefined
+let weatherTimer: number | null = null
 
 peerSocket.onopen = () => {
-  sendAllSettings()
-  queryWeatherData()
-  weatherTimer = setInterval(queryWeatherData, 15 * 60 * 1000)
+  settings.sendAllSettings()
+  weather.sendWeatherData()
+  weatherTimer = setInterval(weather.sendWeatherData, 15 * 60 * 1000)
 }
 
 peerSocket.onclose = () => {
-  if (weatherTimer !== undefined) {
+  if (weatherTimer !== null) {
     clearInterval(weatherTimer)
-    weatherTimer = undefined
+    weatherTimer = null
   }
 }
 
