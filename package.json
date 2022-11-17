@@ -18,8 +18,9 @@
       "access_location"
     ],
     "buildTargets": [
-      "atlas",
-      "vulcan"
+      "meson",
+      "gemini",
+      "mira"
     ],
     "i18n": {
       "en-US": {
