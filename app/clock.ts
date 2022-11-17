@@ -1,12 +1,10 @@
 import clock from 'clock'
 import document from 'document'
-import { battery } from 'power'
 import { today } from 'user-activity'
 import { Preferences, preferences } from 'user-settings'
 
 const time = document.getElementById('time') as Element
 const date = document.getElementById('date') as Element
-const batteryLevel = document.getElementById('batteryLevel') as Element
 const steps = document.getElementById('steps') as Element
 
 export const init = () => {
@@ -17,7 +15,6 @@ export const init = () => {
 export const updateClock = (dateFormat: string | null) => {
   time.text = getTime(preferences)
   date.text = getDate(dateFormat ?? 'yyyy/MM/dd E')
-  batteryLevel.text = `${battery.chargeLevel}%`
   const stepsValue = today.adjusted.steps || 0
   steps.text = stepsValue.toLocaleString()
 }
