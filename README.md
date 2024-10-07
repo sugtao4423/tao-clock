@@ -1,3 +1,6 @@
+![](https://pbs.twimg.com/media/GZTZmCnbcAAKNyu.jpg:thumb)  
+[元ツイート](https://twitter.com/sugtao4423/status/1843337401655275869)
+
 ![](https://pbs.twimg.com/media/DpupZc1U4AAZMbU.jpg:thumb)  
 [元ツイート](https://twitter.com/sugtao4423/status/1052621202747838464)
 
